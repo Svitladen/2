@@ -27,12 +27,15 @@ jobs:
               git \
               libltdl-dev \
               libffi-dev \
-              libssl-dev
+              libssl-dev \
+              libsqlite3-dev
 
       - name: Install Buildozer and Cython
         run: |
-          pip install --upgrade pip
-          pip install --user --upgrade cython==0.29.36 buildozer
+          python3 -m pip install --upgrade pip
+          pip install --user --upgrade cython==0.29.36
+          pip install --user --upgrade buildozer
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
 
       - name: Build with Buildozer
         run: buildozer -v android debug
