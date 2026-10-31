@@ -17,8 +17,8 @@ source.file = app.py
 # Версия
 version = 1.0
 
-# Требования (Kivy и Python)
-requirements = python3,kivy
+# Требования (фиксируем Python 3.11 для стабильной сборки)
+requirements = python3==3.11.9,kivy
 
 # Ориентация экрана
 orientation = portrait
@@ -26,7 +26,7 @@ orientation = portrait
 # Разрешения
 android.permissions = INTERNET
 
-# Фиксированные стабильные версии Android SDK (предотвращают ошибку с лицензией 37)
+# Стабильные версии Android SDK
 android.api = 33
 android.minapi = 21
 android.sdk = 33
