@@ -13,32 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-              python3-pip \
-              build-essential \
-              git \
-              libltdl-dev \
-              libffi-dev \
-              libssl-dev \
-              libsqlite3-dev
-
-      - name: Install Buildozer and Cython
-        run: |
-          python3 -m pip install --upgrade pip
-          pip install --user --upgrade cython==0.29.36
-          pip install --user --upgrade buildozer
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
-
       - name: Build with Buildozer
-        run: buildozer -v android debug
+        uses: kivy/buildozer-action@v1
+        with:
+          command: buildozer -v android debug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
