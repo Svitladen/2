@@ -1,32 +1,19 @@
 [app]
 
-# Название твоего приложения
 title = German Trainer
 package.name = germantrainer
 package.domain = org.germantrainer
 
-# Путь к исходному коду приложения (текущая папка)
 source.dir = .
-
-# Какие файлы включать в APK
 source.include_exts = py,png,jpg,kv,atlas,csv
-
-# Главный файл приложения
 source.file = app.py
-
-# Версия
 version = 1.0
 
-# Требования
-requirements = python3,kivy
+requirements = python3==3.11.9,kivy
 
-# Ориентация экрана
 orientation = portrait
-
-# Разрешения
 android.permissions = INTERNET
 
-# Стабильные версии Android SDK
 android.api = 33
 android.minapi = 21
 android.sdk = 33
