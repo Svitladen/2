@@ -17,8 +17,8 @@ source.file = app.py
 # Версия
 version = 1.0
 
-# Требования (фиксируем Python 3.11 для стабильной сборки)
-requirements = python3==3.11.9,kivy
+# Требования
+requirements = python3,kivy
 
 # Ориентация экрана
 orientation = portrait
